@@ -9,9 +9,9 @@ This is my repo for STATS 220.
 - I am interested in learning about the basics of **R coding**
 
 ### Course Goals:
-1. Learn Markdown and GitHub  
+1. Learn some useful r skills  
 2. Get comfortable with `R` programming  
-3. Create awesome data visualizations  
+3. Create something fun using the skills i have learnt
 
 ### Useful Links:
 - [University of Auckland](https://www.auckland.ac.nz/)
