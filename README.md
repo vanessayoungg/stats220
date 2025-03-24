@@ -20,4 +20,4 @@ This is my repo for STATS 220.
 ### My Current University Mood:
 A meme that captures how I currently feel about my university studies:
 
-![Studying Cat](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3MzaHRjOGY0N2Ewb3V2aDZ3NWtkZmY0aTc4ZmE4OXM1YXU3MTNhMiZjdD1n/TNf5d9RHzczjFkhjft/giphy.gif)
+![tired spongebob][(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3MzaHRjOGY0N2Ewb3V2aDZ3NWtkZmY0aTc4ZmE4OXM1YXU3MTNhMiZjdD1n/TNf5d9RHzczjFkhjft/giphy.gif](https://themighty.com/wp-content/uploads/2018/03/tumblr_o2trufoNDB1uxgwlwo1_500.jpg))
