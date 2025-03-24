@@ -16,6 +16,7 @@ This is my repo for STATS 220.
 ### Useful Links:
 - [University of Auckland](https://www.auckland.ac.nz/)
 - [Markdown Guide](https://www.markdownguide.org/)
+- [CSS guide ](https://www.w3schools.com/css/)
 
 ### My Current University Mood:
 A meme that captures how I currently feel about my university studies:
