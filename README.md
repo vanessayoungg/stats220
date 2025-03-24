@@ -9,9 +9,9 @@ This is my repo for STATS 220.
 - I am interested in learning about the basics of **R coding**
 
 ### Course Goals:
-1. Learn some useful r skills  
+1. Learn some useful R skills  
 2. Get comfortable with `R` programming  
-3. Create something fun using the skills i have learnt
+3. Create something fun using the skills I have learnt
 
 ### Useful Links:
 - [University of Auckland](https://www.auckland.ac.nz/)
@@ -20,4 +20,4 @@ This is my repo for STATS 220.
 ### My Current University Mood:
 A meme that captures how I currently feel about my university studies:
 
-![tired spongebob][(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3MzaHRjOGY0N2Ewb3V2aDZ3NWtkZmY0aTc4ZmE4OXM1YXU3MTNhMiZjdD1n/TNf5d9RHzczjFkhjft/giphy.gif](https://themighty.com/wp-content/uploads/2018/03/tumblr_o2trufoNDB1uxgwlwo1_500.jpg))
+![Tired SpongeBob](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3MzaHRjOGY0N2Ewb3V2aDZ3NWtkZmY0aTc4ZmE4OXM1YXU3MTNhMiZjdD1n/TNf5d9RHzczjFkhjft/giphy.gif)
