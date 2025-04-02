@@ -35,42 +35,46 @@ h2 {
 
 ```
 
-## Analysing the bar charts
-
-```{r}
-# Load and clean the data
+# Load the tidyverse package
 library(tidyverse)
 
+# Import the data
 logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQtlW5t7zNifon10TZmabGOnYOtfesceP5QSQRCqFu-Zoxlxbu4w2fVFGF__DPp9ocXRx4BelWQ9JL/pub?output=csv")
 
+# Rename columns (based on actual order from your form)
 latest_data <- logged_data %>%
   rename(
     timestamp = 1,
-    soap_available = 2,
+    num_people = 4,
     cleanliness = 3,
-    num_people = 4
-  ) %>%
-  drop_na()
+    soap_available = 2
+  )
+
+# Remove rows with missing values
+latest_data <- latest_data %>%
+  filter(!is.na(num_people), !is.na(cleanliness), !is.na(soap_available))
 
 # Summary values
 num_obs <- nrow(latest_data)
-mean_people <- mean(latest_data$num_people) %>% round(1)
-most_common_cleanliness <- latest_data$cleanliness %>%
-  table() %>%
-  which.max() %>%
-  names()
+mean_people <- round(mean(latest_data$num_people), 1)
+min_people <- min(latest_data$num_people)
+max_people <- max(latest_data$num_people)
 
-# Count of soap availability
-soap_counts <- table(latest_data$soap_available)
-yes_soap <- soap_counts[["Yes"]]
-no_soap <- soap_counts[["No"]]
-percent_yes <- round((yes_soap / sum(soap_counts)) * 100, 1)
-percent_no <- round((no_soap / sum(soap_counts)) * 100, 1)
+# Most common cleanliness level
+cleanliness_table <- table(latest_data$cleanliness)
+most_common_cleanliness <- names(cleanliness_table)[which.max(cleanliness_table)]
+
+# Soap availability summary
+soap_table <- table(latest_data$soap_available)
+yes_soap <- soap_table["Yes"]
+no_soap <- soap_table["No"]
+total_soap <- yes_soap + no_soap
+percent_yes <- round((yes_soap / total_soap) * 100, 1)
+percent_no <- round((no_soap / total_soap) * 100, 1)
 
 
-# Plot 1: Cleanliness bar chart
-latest_data %>%
-  ggplot() +
+# Bar chart: Cleanliness level
+ggplot(latest_data) +
   geom_bar(aes(x = cleanliness), fill = "#A7C7E7") +
   labs(
     title = "Cleanliness of Restrooms",
@@ -80,9 +84,8 @@ latest_data %>%
   ) +
   theme_minimal()
 
-# Plot 2: Soap availability bar chart
-latest_data %>%
-  ggplot() +
+# Bar chart: Soap and paper towel availability
+ggplot(latest_data) +
   geom_bar(aes(x = soap_available), fill = "#FFB6C1") +
   labs(
     title = "Soap and Paper Towel Availability",
@@ -93,18 +96,15 @@ latest_data %>%
   theme_minimal()
 
 
-paste0("There were ", num_obs, " complete observations recorded in this dataset")
 
-paste0("On average, ", mean_people, " people used the restroom during each observation")
+# Dynamic comments
+paste0("There were ", num_obs, " complete observations recorded in this dataset.")
+paste0("On average, ", mean_people, " people used the restroom during each observation.")
+paste0("The most commonly reported cleanliness level was ", most_common_cleanliness, ".")
+paste0("Soap and paper towels were available in ", yes_soap, " out of ", total_soap,
+       " observed restrooms (", percent_yes, "%). In contrast, ", no_soap,
+       " observations (", percent_no, "%) reported no supplies present.")
 
-paste0("The most commonly reported cleanliness level was ", most_common_cleanliness)
-
-paste0(
-  "Soap and paper towels were available in ", yes_soap, " out of ",
-  sum(soap_counts), " observed restrooms (", percent_yes, "%). ",
-  "In contrast, ", no_soap, " observations (", percent_no, "%) reported no supplies present. ",
-  "This suggests that while hygiene resources were generally accessible, a notable proportion of restrooms still lacked basic provisions."
-)
 
 
 ```
