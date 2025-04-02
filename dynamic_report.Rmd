@@ -42,7 +42,9 @@ h2 {
 library(tidyverse)
 
 # Import the data from Google Sheets CSV
-logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQtlW5t7zNifon10TZmabGOnYOtfesceP5QSQRCqFu-Zoxlxbu4w2fVFGF__DPp9ocXRx4BelWQ9JL/pub?output=csv")
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQtlW5t7zNifon10TZmabGOnYOtfesceP5QSQRCqFu-Zoxlxbu4w2fVFGF__DPp9ocXRx4BelWQ9JL/pub?gid=1674105303&single=true&output=csv
+")
+
 
 # View column names and data structure
 glimpse(logged_data)
