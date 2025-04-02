@@ -1,0 +1,110 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+library(tidyverse)
+```
+
+```{css}
+/* custom styling */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: #f5f5dc; /* beige background */
+  padding: 2rem;
+  margin: 0;
+}
+
+h2 {
+  color: #808080;
+}
+
+/* Chart container with pastel yellow border and spacing */
+.chart-container {
+  border: 2px solid #fff8b3; /* pastel yellow */
+  border-radius: 8px;
+  padding: 16px;
+  margin: 40px 0; /* Adds top and bottom spacing */
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+
+```
+
+## Analysing the bar charts
+
+```{r}
+# Load and clean the data
+library(tidyverse)
+
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRQtlW5t7zNifon10TZmabGOnYOtfesceP5QSQRCqFu-Zoxlxbu4w2fVFGF__DPp9ocXRx4BelWQ9JL/pub?output=csv")
+
+latest_data <- logged_data %>%
+  rename(
+    timestamp = 1,
+    soap_available = 2,
+    cleanliness = 3,
+    num_people = 4
+  ) %>%
+  drop_na()
+
+# Summary values
+num_obs <- nrow(latest_data)
+mean_people <- mean(latest_data$num_people) %>% round(1)
+most_common_cleanliness <- latest_data$cleanliness %>%
+  table() %>%
+  which.max() %>%
+  names()
+
+# Count of soap availability
+soap_counts <- table(latest_data$soap_available)
+yes_soap <- soap_counts[["Yes"]]
+no_soap <- soap_counts[["No"]]
+percent_yes <- round((yes_soap / sum(soap_counts)) * 100, 1)
+percent_no <- round((no_soap / sum(soap_counts)) * 100, 1)
+
+
+# Plot 1: Cleanliness bar chart
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = cleanliness), fill = "#A7C7E7") +
+  labs(
+    title = "Cleanliness of Restrooms",
+    x = "Cleanliness Level",
+    y = "Count",
+    caption = "Source: STATS 220 Observational Log"
+  ) +
+  theme_minimal()
+
+# Plot 2: Soap availability bar chart
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = soap_available), fill = "#FFB6C1") +
+  labs(
+    title = "Soap and Paper Towel Availability",
+    x = "Soap Available?",
+    y = "Count",
+    caption = "Source: STATS 220 Observational Log"
+  ) +
+  theme_minimal()
+
+
+paste0("There were ", num_obs, " complete observations recorded in this dataset")
+
+paste0("On average, ", mean_people, " people used the restroom during each observation")
+
+paste0("The most commonly reported cleanliness level was ", most_common_cleanliness)
+
+paste0(
+  "Soap and paper towels were available in ", yes_soap, " out of ",
+  sum(soap_counts), " observed restrooms (", percent_yes, "%). ",
+  "In contrast, ", no_soap, " observations (", percent_no, "%) reported no supplies present. ",
+  "This suggests that while hygiene resources were generally accessible, a notable proportion of restrooms still lacked basic provisions."
+)
+
+
+```
