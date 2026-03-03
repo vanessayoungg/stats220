@@ -8,7 +8,7 @@ This is my repo for STATS 220.
 
 
  *Why STATS 220?*
-- I am taking STATS 220 because this seemed like a fun and interesting course
+- I am taking STATS 220 again because i didn't it the exam and I really enjoyed this course so would like to give it another go. 
 - I am interested in learning about the basics of **R coding**
 
 ### Course Goals:
