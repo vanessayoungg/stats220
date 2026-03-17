@@ -26,7 +26,7 @@ Here is the [STATS 220 course page](https://study.auckland.ac.nz/ords/r/uoa/cata
 
 Here is an animated GIF I like:
 
-![](https://giphy.com/gifs/eating-spongebob-squarepants-d2ItDZZumUI6Y)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzV0ZGZmZjZuMmFwdGtza3B2eW1oNjVvcW85eGw3dmd3a2djY2RmciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d2ItDZZumUI6Y/giphy.gif)
 ### Useful Links:
 - [University of Auckland](https://www.auckland.ac.nz/)
 - [Markdown Guide](https://www.markdownguide.org/)
