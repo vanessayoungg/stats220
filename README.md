@@ -3,25 +3,31 @@
 
 This is my repo for STATS 220.
 
-### About Me:
-- **Degree**: I am undertaking a degree in **BCom/BSc conjoint**
+# STATS 220
 
+## About this repo
 
- *Why STATS 220?*
-- I am taking STATS 220 again because i didn't it the exam and I really enjoyed this course so would like to give it another go. 
-- I am interested in learning about the basics of **R coding**
+This repository contains my work for **STATS 220: Data Technologies**.
 
-### Course Goals:
-1. Learn some useful R skills  
-2. Get comfortable with `R` programming  
-3. Create something fun using the skills I have learnt
+### What I am learning
+1. How to create HTML using Markdown and R Markdown  
+2. How to use **R** and **RStudio** for data technologies  
+3. How to create images and GIFs using the **magick** package  
 
+### Some skills from this course
+- writing R code
+- creating web pages
+- using Markdown
+- creating memes and animated GIFs
+
+I am enjoying learning *data technologies* because it combines **coding**, **creativity**, and communication.
+
+Here is the [STATS 220 course page](https://courseoutline.auckland.ac.nz/).
+
+Here is an animated GIF I like:
+
+![](https://giphy.com/gifs/eating-spongebob-squarepants-d2ItDZZumUI6Y)
 ### Useful Links:
 - [University of Auckland](https://www.auckland.ac.nz/)
 - [Markdown Guide](https://www.markdownguide.org/)
 - [CSS guide ](https://www.w3schools.com/css/)
-
-### My Current University Mood:
-A meme that captures how I currently feel about my university studies:
-
-![Tired SpongeBob](https://themighty.com/wp-content/uploads/2018/03/tumblr_o2trufoNDB1uxgwlwo1_500.jpg)
