@@ -20,7 +20,7 @@ This repository contains my work for **STATS 220: Data Technologies**.
 - using Markdown
 - creating memes and animated GIFs
 
-I am enjoying learning *data technologies* because it combines **coding**, **creativity**, and communication.
+I am enjoying learning *data technologies* because it combines **coding**, **creativity**, and **communication**.
 
 Here is the [STATS 220 course page](https://study.auckland.ac.nz/ords/r/uoa/catalogue/course?p6_code=STATS%20220).
 
